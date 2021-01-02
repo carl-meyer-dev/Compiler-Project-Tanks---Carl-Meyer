@@ -9,10 +9,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06945c39-7a46-445d-84a6-2326acea7ff9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer.sln" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Compiler Project Tanks - Carl Meyer.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Program.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MainProgram.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Token.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Token.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,15 +28,48 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/FFA0381F-32F6-445E-8FA2-150A409FEE00/4/Console.cs" root0="SKIP_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Program.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Token.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Menu.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MyConsole.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Terminal.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expressiob.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MainProgram.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Program.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression/PrimaryExpression.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression/BracketsPE.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Terminal/Terminal.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Terminal/Identifier.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Terminal/Operator.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Terminal/Operate.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression/IdentifierPE.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Terminal.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Identifier.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Operate.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Command/Command.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression/Expression.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Command/IfCommand.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/AST.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1keLbGrOl3w6nzXf3NiQH5LF8gf" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -38,6 +77,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RunManager">
@@ -69,13 +109,15 @@
       <option name="presentableId" value="Default" />
       <updated>1606056182696</updated>
       <workItem from="1606056196722" duration="125000" />
+      <workItem from="1606056412216" duration="1142000" />
+      <workItem from="1609325766164" duration="29750000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnityProjectConfiguration" hasMinimizedUI="null" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="NUnit" />
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -87,8 +129,31 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1093" height="611" key="GridCell.Tab.0.bottom" timestamp="1609408039374">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1093" height="611" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
+    <state width="1093" height="611" key="GridCell.Tab.0.center" timestamp="1609408039374">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1093" height="611" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
+    <state width="1093" height="611" key="GridCell.Tab.0.left" timestamp="1609408039373">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1093" height="611" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609408039373" />
+    <state width="1093" height="611" key="GridCell.Tab.0.right" timestamp="1609408039374">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1093" height="611" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
+    <state x="571" y="91" key="RiderGenerateDialog" timestamp="1609404612492">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="571" y="91" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1609404612492" />
   </component>
 </project>

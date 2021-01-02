@@ -7,7 +7,10 @@
       <e p="Compiler Project Tanks - Carl Meyer" t="IncludeRecursive">
         <e p="AST.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="CLI.cs" t="Include" />
         <e p="Compiler Project Tanks - Carl Meyer.csproj" t="IncludeRecursive" />
+        <e p="Compiler Project Tanks - Carl Meyer.csproj.DotSettings" t="Include" />
+        <e p="MainProgram.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive">
           <e p="Debug" t="Include">
             <e p="netcoreapp3.1" t="Include">
@@ -16,9 +19,11 @@
           </e>
         </e>
         <e p="Parser.cs" t="Include" />
-        <e p="Program.cs" t="Include" />
         <e p="Scanner.cs" t="Include" />
+        <e p="SourceCode.txt" t="Include" />
+        <e p="test.txt" t="Include" />
         <e p="Token.cs" t="Include" />
+        <e p="UI.cs" t="Include" />
       </e>
       <e p="Compiler Project Tanks - Carl Meyer.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

@@ -5,7 +5,18 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     public class Token
     {
         String Spelling;
-        int Type;        // 1 - Identifier, 2 Operator, 3 LPar, 4 RPar
+        int Type;
+        // 1 Identifier, 
+        // 2 Operator, 
+        // 3 LPar, 
+        // 4 RPar
+        // 5 Literal
+        // 6 If
+        // 7 Then
+        // 8 Else
+        // 9 Let
+        // 10 In 
+        // 11 End 
         public Token(String S, int T)
         {
             Spelling = S;
