@@ -21,6 +21,9 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         const int Let = 9;
         const int In = 10;
         const int End = 11;
+        const int Is = 12;
+        private const int Var = 13;
+        private const int SemiColon = 14;
         public Parser(String Sentence)
         {
             Scanner S = new Scanner(Sentence);
@@ -83,6 +86,12 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                     case 11:
                         Console.WriteLine("Syntax Error missing end");
                         break;
+                    case 12:
+                        Console.WriteLine("Syntax Error missing : after variable declaration");
+                        break;
+                    case 13:
+                        Console.WriteLine("Syntax Error missing var before declaring variable");
+                        break;
                     default:
                         Console.WriteLine("Syntax Error in accept");
                         break;
@@ -114,27 +123,35 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             if (CurrentToken == null)
                 return null;
-            Command command;
+            Command command = null;
             switch (CurrentToken.getType())
             {
                 // Command 		::=	if Expression then Command else Command 
                 case If:
-                    command = HandleIfCommand();
+                    command = parseIfCommand();
                     break;
                 // Command | let Declaration in Command
                 case Let:
-                    command = handleLetCommand();
+                    command = parseLetCommand();
                     break; 
                 
                 // Command | V-name := Expression |
                 case Identifier:
-                    command = handleAssignCommand();
+                    command = parseAssignCommand();
+                    break;
+                default:
+                    Console.WriteLine("Syntax Error in Command");
                     break;
                     
             }
-        }
 
-        Command HandleIfCommand()
+            return command;
+        }
+        /**
+         * Parse the IfCommand that can be called from the parseCommand method
+         * Command 		::=	if Expression then Command else Command 
+         */
+        Command parseIfCommand()
         {
             // if token found, accept it then continue parsing
             acceptIt();
@@ -151,32 +168,65 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             //done parsing if accept an end command
             return new IfCommand(expression, ifTrueCommand, ifFalseCommand);
         }
-
-        Command handleLetCommand()
+        
+        /**
+         * Parse the LetCommand that can be called from the parseCommand method
+         * Command := let Declaration in Command
+         */
+        Command parseLetCommand()
         {
             acceptIt();
-            Declaration declaration = parseDeclaration();
+            Declaration declaration = parseSingleDeclaration();
+            /*
+             Here I am following an example from the Textbook
+             Example 4.12 shows how to handle the parseSingleDeclaration of the rule Command := singleDeclaration(;singleDeclartion)*
+             I am adapting that solution for my use case but instead using an if statement here since we can only have 
+             2 Declarations declared after one another (Declaration;Declaration).
+             So here I am calling the parseDeclaration method which will resolve the declaration in to its singleDeclaration rule
+             but it will also handle the sequentialDeclaration rule as you can see below. 
+             */
+            if (CurrentToken.getType().Equals(SemiColon))
+            {
+                // we know its a semi colon so we just accept it
+                acceptIt();
+                declaration = new SequentialDeclaration(declaration, parseDeclaration());
+            }
+            // expect the next token to be an In
             accept(In);
             Command command = new LetCommand(declaration, parseCommand());
+            // make sure it ends with the End Token
             accept(End);
             return command;
         }
-
-        Command HandleAssignCommand()
+        /**
+         * Parse the AssignCommand that can be called from the parseCommand method
+         * Command := V-name := Expression 
+         */
+        Command parseAssignCommand()
         {
-            
+            VName VName = new VName(CurrentToken.getSpelling());
+            acceptIt(); // Accept VName
+            // then we expect the next token to be an operator (which should be an '=' sign)
+            accept(Operator);
+            return new AssignCommand(VName, parseExpression());
         }
-
+        // ============================================================================================================
+        // Expression 		::=	PrimaryExpression Operator PrimaryExpression
         Expression parseExpression()
         {
-            Expression ExpAST;
+            Expression expression;
+            if (CurrentToken == null)
+                return null;
             PrimaryExpression P1 = parsePrimary();
             Operate O = parseOperator();
             PrimaryExpression P2 = parsePrimary();
-            ExpAST = new Expression(P1, O, P2);
-            return ExpAST;
+            expression = new Expression(P1, O, P2);
+            return expression;
         }
 
+        // PrimaryExpression	   ::=	V-name
+        //                         ::=	| ( Expression )
+        //                              | Int-literal
 
         PrimaryExpression parsePrimary()
         {
@@ -202,29 +252,72 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
             return PE;
         }
-
-        Declaration parseDeclaration()
-        {
-           
-            switch (CurrentToken.getType())
-            {
-                
-            }
-            return 
-        }
-
-        Identifier parseIdentifier()
+    
+        // =============================================================================================================
+       // V-name 		::=	a | b | c | d | e
+       Identifier parseIdentifier()
         {
             Identifier I = new Identifier(CurrentToken.getSpelling());
             accept(Identifier);
             return I;
         }
-
+       // Operator 		::=	+ | - | * | / | < | > | =
         Operate parseOperator()
         {
             Operate O = new Operate(CurrentToken.getSpelling());
             accept(Operator);
             return O;
+        }
+        // ============================================================================================================
+        // Declaration 		::= 	single-Declaration
+        //                         | Declaration ; Declaration
+
+        Declaration parseDeclaration()
+        {
+            Declaration declaration = parseSingleDeclaration();
+            /*
+             Here I am following an example from the Textbook
+             Example 4.12 shows how to handle the parseSingleDeclaration of the rule Command := singleDeclaration(;singleDeclartion)*
+             I am adapting that solution for my use case but instead using an if statement here since we can only have 
+             2 Declarations declared after one another (Declaration;Declaration).
+             So here I am calling the parseDeclaration method which will resolve the declaration in to its singleDeclaration rule
+             but it will also handle the sequentialDeclaration rule as you can see below. 
+             */
+            if (CurrentToken.getType().Equals(SemiColon))
+            {
+                // we know its a semi colon so we just accept it
+                acceptIt();
+                declaration = new SequentialDeclaration(declaration, parseDeclaration());
+            }
+            return declaration;
+        }
+        
+        // Single-Declaration 	::= 	var V-name : Type-denoter
+        SingleDeclaration parseSingleDeclaration()
+        {
+            SingleDeclaration singleDeclaration = null;
+            acceptIt () ; 
+            Identifier I =  parseIdentifier();
+            accept(Is); 
+            TypeDenoter kind =  parseTypeDenoter();
+            singleDeclaration = new SingleDeclaration(I, kind);
+            return singleDeclaration;
+        }
+
+        // =============================================================================================================
+        // Type-denoter		::= 	int | double | boolean
+        TypeDenoter parseTypeDenoter()
+        {
+            TypeDenoter typeDenoter = new TypeDenoter(CurrentToken.getSpelling());
+            accept(Literal);
+            return typeDenoter;
+        }
+
+        IntLiteral parseIntLiteral()
+        {
+            IntLiteral intLiteral = new IntLiteral(CurrentToken.getSpelling());
+            accept(Literal);
+            return intLiteral;
         }
     }
 }

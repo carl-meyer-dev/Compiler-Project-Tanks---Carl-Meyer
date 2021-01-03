@@ -44,7 +44,26 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
     public class LetCommand : Command
     {
-        
+        public Declaration declaration;
+        public Command command;
+
+        public LetCommand(Declaration declaration, Command command)
+        {
+            this.declaration = declaration;
+            this.command = command;
+        }
+    }
+
+    public class AssignCommand : Command
+    {
+        public VName vname;
+        public Expression exp;
+
+        public AssignCommand(VName vname,Expression exp)
+        {
+            this.vname = vname;
+            this.exp = exp;
+        }
     }
     
     // =================================================================================================================
@@ -114,12 +133,12 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
     public class SingleDeclaration: Declaration
     {
-        private String spelling;
+        private Identifier identifier;
         private TypeDenoter _typeDenoter;
 
-        public SingleDeclaration(String s, TypeDenoter t)
+        public SingleDeclaration(Identifier i, TypeDenoter t)
         {
-            spelling = s;
+            identifier = i;
             _typeDenoter = t;
         }
     }

@@ -9,16 +9,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06945c39-7a46-445d-84a6-2326acea7ff9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MainProgram.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Token.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Token.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +105,7 @@
       <updated>1606056182696</updated>
       <workItem from="1606056196722" duration="125000" />
       <workItem from="1606056412216" duration="1142000" />
-      <workItem from="1609325766164" duration="29750000" />
+      <workItem from="1609325766164" duration="38290000" />
     </task>
     <servers />
   </component>
@@ -155,5 +150,9 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="571" y="91" key="RiderGenerateDialog/0.0.1536.834@0.0.1536.834" timestamp="1609404612492" />
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog" timestamp="1609701289432">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1609701289432" />
   </component>
 </project>
