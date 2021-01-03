@@ -10,10 +10,9 @@
   <component name="ChangeListManager">
     <list default="true" id="06945c39-7a46-445d-84a6-2326acea7ff9" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/test.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,8 +34,6 @@
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Menu.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MyConsole.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Terminal.cs" />
-        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" />
-        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expressiob.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/Expression.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/MainProgram.cs" />
@@ -57,6 +54,8 @@
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST/AST.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Scanner.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" />
+        <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/UI.cs" />
         <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" />
       </list>
     </option>
@@ -70,6 +69,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.3495212" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.3009576" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="false" />
@@ -105,7 +106,7 @@
       <updated>1606056182696</updated>
       <workItem from="1606056196722" duration="125000" />
       <workItem from="1606056412216" duration="1142000" />
-      <workItem from="1609325766164" duration="38290000" />
+      <workItem from="1609325766164" duration="42081000" />
     </task>
     <servers />
   </component>
@@ -130,22 +131,86 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1093" height="611" key="GridCell.Tab.0.bottom" timestamp="1609408039374">
+    <state width="1493" height="292" key="GridCell.Tab.0.bottom" timestamp="1609704709932">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1093" height="611" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
-    <state width="1093" height="611" key="GridCell.Tab.0.center" timestamp="1609408039374">
+    <state width="1493" height="292" key="GridCell.Tab.0.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609704709932" />
+    <state width="1493" height="292" key="GridCell.Tab.0.center" timestamp="1609704709931">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1093" height="611" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
-    <state width="1093" height="611" key="GridCell.Tab.0.left" timestamp="1609408039373">
+    <state width="1493" height="292" key="GridCell.Tab.0.center/0.0.1536.834@0.0.1536.834" timestamp="1609704709931" />
+    <state width="1493" height="292" key="GridCell.Tab.0.left" timestamp="1609704709931">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1093" height="611" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609408039373" />
-    <state width="1093" height="611" key="GridCell.Tab.0.right" timestamp="1609408039374">
+    <state width="1493" height="292" key="GridCell.Tab.0.left/0.0.1536.834@0.0.1536.834" timestamp="1609704709931" />
+    <state width="1493" height="292" key="GridCell.Tab.0.right" timestamp="1609704709932">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
-    <state width="1093" height="611" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609408039374" />
+    <state width="1493" height="292" key="GridCell.Tab.0.right/0.0.1536.834@0.0.1536.834" timestamp="1609704709932" />
+    <state width="1493" height="292" key="GridCell.Tab.1.bottom" timestamp="1609704380574">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.1.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609704380574" />
+    <state width="1493" height="292" key="GridCell.Tab.1.center" timestamp="1609704380574">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.1.center/0.0.1536.834@0.0.1536.834" timestamp="1609704380574" />
+    <state width="1493" height="292" key="GridCell.Tab.1.left" timestamp="1609704380574">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.1.left/0.0.1536.834@0.0.1536.834" timestamp="1609704380574" />
+    <state width="1493" height="292" key="GridCell.Tab.1.right" timestamp="1609704380574">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.1.right/0.0.1536.834@0.0.1536.834" timestamp="1609704380574" />
+    <state width="1493" height="292" key="GridCell.Tab.2.bottom" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.2.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.2.center" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.2.center/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.2.left" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.2.left/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.2.right" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.2.right/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.3.bottom" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.3.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
+    <state width="1493" height="292" key="GridCell.Tab.3.center" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.3.center/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.3.left" timestamp="1609704371933">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.3.left/0.0.1536.834@0.0.1536.834" timestamp="1609704371933" />
+    <state width="1493" height="292" key="GridCell.Tab.3.right" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.3.right/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
+    <state width="1493" height="292" key="GridCell.Tab.4.bottom" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.4.bottom/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
+    <state width="1493" height="292" key="GridCell.Tab.4.center" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.4.center/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
+    <state width="1493" height="292" key="GridCell.Tab.4.left" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.4.left/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
+    <state width="1493" height="292" key="GridCell.Tab.4.right" timestamp="1609704371934">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state width="1493" height="292" key="GridCell.Tab.4.right/0.0.1536.834@0.0.1536.834" timestamp="1609704371934" />
     <state x="571" y="91" key="RiderGenerateDialog" timestamp="1609404612492">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -154,5 +219,32 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="93" y="93" width="1350" height="648" key="VCS.FileHistoryDialog/0.0.1536.834@0.0.1536.834" timestamp="1609701289432" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="DotNet Breakpoints">
+          <url>file://$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs</url>
+          <line>116</line>
+          <properties documentPath="C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\Parser.cs" initialLine="114">
+            <startOffsets>
+              <option value="3839" />
+            </startOffsets>
+            <endOffsets>
+              <option value="3888" />
+            </endOffsets>
+          </properties>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="Type#Compiler_Project_Tanks___Carl_Meyer.Terminal" memberName="Spelling" />
+        <PinnedItemInfo parentTag="Frame#Compiler_Project_Tanks___Carl_Meyer.Parser.parseOperator" memberName="this" />
+        <PinnedItemInfo parentTag="Frame#Compiler_Project_Tanks___Carl_Meyer.Parser..ctor" memberName="S" />
+        <PinnedItemInfo parentTag="Frame#Compiler_Project_Tanks___Carl_Meyer.Parser.parseIdentifier" memberName="I" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>

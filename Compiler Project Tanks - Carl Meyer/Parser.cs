@@ -1,11 +1,13 @@
 ﻿using System;
 using System.Collections;
 using System.Linq.Expressions;
+using System.Text.Json;
 
 namespace Compiler_Project_Tanks___Carl_Meyer
 {
     public class Parser
     {
+        private UI _ui = new UI();
         ArrayList TokenList;
         Token CurrentToken;
         int CurTokenPos;
@@ -31,7 +33,10 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             TokenList = S.getTokens();
             CurTokenPos = -1;
             FetchNextToken();
-            Expression P = parseExpression();
+            
+            Program P = parseProgram();
+            _ui.Info("Finished Parsing.");
+            _ui.Dump(P);
         }
         
         // =============================================================================================================
@@ -54,46 +59,46 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 switch (Type)
                 {
                     case 1:
-                        Console.WriteLine("Syntax Error expected identifier");
+                        _ui.Error("Syntax Error expected identifier");
                         break;
                     case 2:
-                        Console.WriteLine("Syntax Error expected operator");
+                        _ui.Error("Syntax Error expected operator");
                         break;
                     case 3:
-                        Console.WriteLine("Syntax Error expected '('");
+                        _ui.Error("Syntax Error expected '('");
                         break;
                     case 4:
-                        Console.WriteLine("Syntax Error expected ')'");
+                        _ui.Error("Syntax Error expected ')'");
                         break;
                     case 5:
-                        Console.WriteLine("Syntax Error expected literal");
+                        _ui.Error("Syntax Error expected literal");
                         break;
                     case 6:
-                        Console.WriteLine("Syntax Error expected 'if'");
+                        _ui.Error("Syntax Error expected 'if'");
                         break;
                     case 7:
-                        Console.WriteLine("Syntax Error expected 'then' after if");
+                        _ui.Error("Syntax Error expected 'then' after if");
                         break;
                     case 8:
-                        Console.WriteLine("Syntax Error expected 'else' after then");
+                        _ui.Error("Syntax Error expected 'else' after then");
                         break;
                     case 9:
-                        Console.WriteLine("Syntax Error expected 'Let'");
+                        _ui.Error("Syntax Error expected 'Let'");
                         break;
                     case 10:
-                        Console.WriteLine("Syntax Error expected 'in' after let");
+                        _ui.Error("Syntax Error expected 'in' after let");
                         break;
                     case 11:
-                        Console.WriteLine("Syntax Error missing end");
+                        _ui.Error("Syntax Error missing end");
                         break;
                     case 12:
-                        Console.WriteLine("Syntax Error missing : after variable declaration");
+                        _ui.Error("Syntax Error missing : after variable declaration");
                         break;
                     case 13:
-                        Console.WriteLine("Syntax Error missing var before declaring variable");
+                        _ui.Error("Syntax Error missing var before declaring variable");
                         break;
                     default:
-                        Console.WriteLine("Syntax Error in accept");
+                        _ui.Error("Syntax Error in accept");
                         break;
                 }
         }
