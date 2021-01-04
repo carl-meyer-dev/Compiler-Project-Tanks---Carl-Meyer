@@ -17,6 +17,9 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         // 9 Let
         // 10 In 
         // 11 End 
+        // Colon = 12;
+        // Var = 13;
+        // SemiColon = 14;
         public Token(String S, int T)
         {
             Spelling = S;

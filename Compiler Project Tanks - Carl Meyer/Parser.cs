@@ -23,7 +23,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         const int Let = 9;
         const int In = 10;
         const int End = 11;
-        const int Is = 12;
+        const int Colon = 12;
         private const int Var = 13;
         private const int SemiColon = 14;
         public Parser(String Sentence)
@@ -36,6 +36,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             
             Program P = parseProgram();
             _ui.Info("Finished Parsing.");
+            _ui.Strong("Program = ");
             _ui.Dump(P);
         }
         
@@ -52,7 +53,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
         void accept(int Type)
         {
-            if (CurrentToken.matchesType(Type))
+            if (CurrentToken != null && CurrentToken.matchesType(Type))
                 FetchNextToken();
             else
                 //Switch on type
@@ -244,6 +245,9 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                     Identifier I = parseIdentifier();
                     PE = new IdentifierPE(I);
                     break;
+                case Literal:
+                    PE = parseIntLiteral();
+                    break;
                 case LPar:
                     acceptIt();
                     PE = new BracketsPE(parseExpression());
@@ -301,9 +305,11 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         SingleDeclaration parseSingleDeclaration()
         {
             SingleDeclaration singleDeclaration = null;
-            acceptIt () ; 
+            // parse the identifier (the variable name)
             Identifier I =  parseIdentifier();
-            accept(Is); 
+            // then expect a : symbol
+            accept(Colon); 
+            // parse the variable type Denoter
             TypeDenoter kind =  parseTypeDenoter();
             singleDeclaration = new SingleDeclaration(I, kind);
             return singleDeclaration;
@@ -314,7 +320,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         TypeDenoter parseTypeDenoter()
         {
             TypeDenoter typeDenoter = new TypeDenoter(CurrentToken.getSpelling());
-            accept(Literal);
+            accept(Identifier);
             return typeDenoter;
         }
 

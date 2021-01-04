@@ -6,12 +6,13 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     public abstract class AST
     {
     }
+
     // =================================================================================================================
     // Program 		::= 	Command        ~ Program
     // This is also the root of the AST
     public class Program : AST
     {
-        private Command command;
+        public Command command;
 
         public Program(Command c)
         {
@@ -27,13 +28,15 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     public class Command : AST
     {
     }
-    
-    public class IfCommand: Command
-    {
-        private Expression _expression;
-        private Command _command1;
-        private Command _command2;
 
+    public class IfCommand : Command
+    {
+        public Expression _expression;
+        public Command _command1;
+
+        public Command _command2;
+
+        // Getters
         public IfCommand(Expression e, Command c1, Command c2)
         {
             _expression = e;
@@ -59,16 +62,16 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         public VName vname;
         public Expression exp;
 
-        public AssignCommand(VName vname,Expression exp)
+        public AssignCommand(VName vname, Expression exp)
         {
             this.vname = vname;
             this.exp = exp;
         }
     }
-    
+
     // =================================================================================================================
     // Expression 		::=	PrimaryExpression Operator PrimaryExpression
-    
+
     public class Expression : AST
     {
         public PrimaryExpression P1;
@@ -92,7 +95,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
     public class IdentifierPE : PrimaryExpression
     {
-        Terminal T;
+        public Terminal T;
 
         public IdentifierPE(Terminal T)
         {
@@ -102,7 +105,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
     public class BracketsPE : PrimaryExpression
     {
-        Expression E;
+        public Expression E;
 
         public BracketsPE(Expression E)
         {
@@ -118,10 +121,10 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     {
     }
 
-    public class SequentialDeclaration: Declaration
+    public class SequentialDeclaration : Declaration
     {
-        private Declaration _declaration1;
-        private Declaration _declaration2;
+        public Declaration _declaration1;
+        public Declaration _declaration2;
 
         public SequentialDeclaration(Declaration d1, Declaration d2)
         {
@@ -129,12 +132,12 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             _declaration2 = d2;
         }
     }
-    
 
-    public class SingleDeclaration: Declaration
+
+    public class SingleDeclaration : Declaration
     {
-        private Identifier identifier;
-        private TypeDenoter _typeDenoter;
+        public Identifier identifier;
+        public TypeDenoter _typeDenoter;
 
         public SingleDeclaration(Identifier i, TypeDenoter t)
         {
@@ -148,13 +151,14 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     // All Terminal Symbols
     public class Terminal : AST
     {
-        String Spelling;
+        public String Spelling;
 
         public Terminal(String Spelling)
         {
             this.Spelling = Spelling;
         }
     }
+
     // V-name 		::=	a | b | c | d | e        ~ Identifier
     public class Identifier : Terminal
     {
@@ -162,6 +166,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
         }
     }
+
     // Operator 		::=	+ | - | * | / | < | > | =
     public class Operate : Terminal
     {
@@ -178,18 +183,20 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     }
 
     // V-name 		::=	a | b | c | d | e
-    public class VName: Terminal
+    public class VName : Terminal
     {
         public VName(String Spelling) : base(Spelling)
         {
         }
     }
-    
+
     // Int-literal 		::=	1 | 2 | 3
-    public class IntLiteral: Terminal
+    public class IntLiteral : PrimaryExpression
     {
-        public IntLiteral(String Spelling) : base(Spelling)
+        public String Spelling;
+        public IntLiteral(String s)
         {
+            Spelling = s;
         }
     }
 }

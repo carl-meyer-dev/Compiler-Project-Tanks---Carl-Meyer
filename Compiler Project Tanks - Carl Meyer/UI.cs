@@ -1,5 +1,8 @@
 ﻿using System;
+using System.Runtime.Serialization.Json;
 using System.Text.Json;
+using Newtonsoft.Json;
+using Formatting = System.Xml.Formatting;
 
 namespace Compiler_Project_Tanks___Carl_Meyer
 {
@@ -35,11 +38,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
         public void Dump(Object o)
         {
-            var options = new JsonSerializerOptions
-            {
-                WriteIndented = true,
-            };
-            string json = JsonSerializer.Serialize(o, options);
+            string json = JsonConvert.SerializeObject(o, Newtonsoft.Json.Formatting.Indented);
             Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(json);
             Console.ResetColor();

@@ -16,7 +16,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         const int Let = 9;
         const int In = 10;
         const int End = 11;
-        const int Is = 12;
+        const int Colon = 12;
         const int Var = 13;
         const int SemiColon = 14;
 
@@ -74,7 +74,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             if (Spelling.Equals("end")) return End;
             if (Spelling.Equals("let")) return Let;
             if (Spelling.Equals("in")) return In;
-            if (Spelling.Equals(":")) return Is;
+            if (Spelling.Equals(":")) return Colon;
             if (Spelling.Equals("var")) return Var;
             if (Spelling.Equals(";")) return SemiColon;
             if (int.TryParse(Spelling, out int n)) return Literal; //See if spelling is a literal
