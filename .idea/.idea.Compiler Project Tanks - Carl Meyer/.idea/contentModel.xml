@@ -5,6 +5,7 @@
     <e p="C:\Users\Carl\AppData\Local\JetBrains\Rider2020.2\resharper-host\Local\Transient\Rider\v202\SolutionCaches\_Compiler Project Tanks - Carl Meyer.805588330.00" t="ExcludeRecursive" />
     <e p="C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer" t="IncludeFlat">
       <e p="Compiler Project Tanks - Carl Meyer" t="IncludeRecursive">
+        <e p="Analyser.cs" t="Include" />
         <e p="AST.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
         <e p="CLI.cs" t="Include" />
@@ -24,6 +25,7 @@
         <e p="test.txt" t="Include" />
         <e p="Token.cs" t="Include" />
         <e p="UI.cs" t="Include" />
+        <e p="Visitor.cs" t="Include" />
       </e>
       <e p="Compiler Project Tanks - Carl Meyer.sln" t="IncludeFlat" />
       <e p="packages" t="ExcludeRecursive" />

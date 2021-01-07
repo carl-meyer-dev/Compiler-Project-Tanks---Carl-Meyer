@@ -11,13 +11,11 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
         private string _sourceCode = "";
         private Scanner _scanner;
-        private UI _ui = new UI();
-
         public void StartMenu()
         {
             Console.Clear();
-            _ui.Strong("Welcome to Carl's Project Tanks Solution!");
-            _ui.Info("\nPlease enter a command:\n");
+            UI.Strong("Welcome to Carl's Project Tanks Solution!");
+            UI.Info("\nPlease enter a command:\n");
             
             ParseCommand(Console.ReadLine());
         }
@@ -26,7 +24,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             if (command == null)
             {
-                _ui.Error("Can not process empty command!");
+                UI.Error("Can not process empty command!");
                 ParseCommand(Console.ReadLine());
                 return;
             }
@@ -77,7 +75,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 //     break;
             }
 
-            _ui.Info("\nPlease enter a command:\n");
+            UI.Info("\nPlease enter a command:\n");
             ParseCommand(Console.ReadLine());
         }
 
@@ -88,7 +86,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             if (_sourceCode == "")
             {
-                _ui.Error("No source code found. Please ensure that you have source code in memory.");
+                UI.Error("No source code found. Please ensure that you have source code in memory.");
                 return false;
             }
 
@@ -99,28 +97,28 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             if (_scanner == null)
             {
-                _ui.Error("Source code has not been scanned yet.");
-                _ui.Info("Do you want to scan now? (y/n)");
+                UI.Error("Source code has not been scanned yet.");
+                UI.Info("Do you want to scan now? (y/n)");
                 Console.WriteLine();
                 if (Console.ReadKey().Equals("y"))
                 {
                     Scan();
                     return true;
                 }
-                _ui.Error("\nScanner has not been initialized. Please scan the source code.");
+                UI.Error("\nScanner has not been initialized. Please scan the source code.");
                 return false;
             }
 
             if (!_scanner._Sentence.Equals(_sourceCode))
             {
-                _ui.Warn("The source code that was scanned does not match the source code in memory.");
-                _ui.Info("Do you want to scan the new source code now? (y/n)");
+                UI.Warn("The source code that was scanned does not match the source code in memory.");
+                UI.Info("Do you want to scan the new source code now? (y/n)");
                 if (Console.ReadKey().Equals("y"))
                 {
                     Scan();
                     return true;
                 }
-                _ui.Warn("\nWarning! Scanner is using old source code.");
+                UI.Warn("\nWarning! Scanner is using old source code.");
             }
 
             return true;
@@ -141,7 +139,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             {
                 StreamWriter sw = new StreamWriter(@"C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\SourceCode.txt");
                 
-                _ui.Info("\nPlease enter source code:\n");
+                UI.Info("\nPlease enter source code:\n");
                 
                 string sourceCode = Console.ReadLine();
                 
@@ -149,12 +147,12 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 
                 sw.Close();
                 
-                _ui.Info("Successfully Saved Source Code!");
+                UI.Info("Successfully Saved Source Code!");
                 
             }
             catch(Exception e)
             {
-                _ui.Error("Exception: " + e.Message);
+                UI.Error("Exception: " + e.Message);
             }
         }
         
@@ -169,19 +167,19 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 
                 if (line == null)
                 {
-                    _ui.Error("Error! No source code found. Try using the save command to save your source code first.");
+                    UI.Error("Error! No source code found. Try using the save command to save your source code first.");
                     sr.Close();
                     return;
                 }
 
                 _sourceCode = line;
                 sr.Close();
-                _ui.Info("Successfully loaded source code from save file.");
+                UI.Info("Successfully loaded source code from save file.");
                 PrintSourceCode();
             }
             catch(Exception e)
             {
-                _ui.Error("Error! Could not load source code: " + e.Message);
+                UI.Error("Error! Could not load source code: " + e.Message);
             }
         }
         
@@ -194,13 +192,13 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             {
                 if (_sourceCode == "")
                 {
-                    _ui.Error("No source code found. Please ensure that you have source code in memory.");
+                    UI.Error("No source code found. Please ensure that you have source code in memory.");
                     return;
                 }
             
                 _scanner = new Scanner(_sourceCode);
                 
-                _ui.Info("Successfully scanned source code.");
+                UI.Info("Successfully scanned source code.");
             }
             catch (Exception e)
             {
@@ -217,11 +215,11 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             if (_sourceCode == "")
             {
-                _ui.Error("No source code found. Please ensure that you have source code in memory.");
+                UI.Error("No source code found. Please ensure that you have source code in memory.");
                 return;
             }
 
-            _ui.Info("The following tokens have been identified in the source code:");
+            UI.Info("The following tokens have been identified in the source code:");
             _scanner.DisplayTokens();
         }
 
@@ -231,7 +229,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             {
                 ReadCode();
             }
-            _ui.Info("\nParsing Source Code...\n");
+            UI.Info("\nParsing Source Code...\n");
             Parser parser = new Parser(_sourceCode);
         }
 
@@ -256,7 +254,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
         private void ReadCode()
         {
-            _ui.Info("\nPlease enter source code:\n");
+            UI.Info("\nPlease enter source code:\n");
 
             _sourceCode = Console.ReadLine();
         }
@@ -264,8 +262,8 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         private void PrintSourceCode()
         {
             // Display the file contents to the console. Variable text is a string.
-            _ui.Info("\nContents of source code:");
-            _ui.Strong(_sourceCode);
+            UI.Info("\nContents of source code:");
+            UI.Strong(_sourceCode);
         }
     }
     

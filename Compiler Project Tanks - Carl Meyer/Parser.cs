@@ -7,7 +7,6 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 {
     public class Parser
     {
-        private UI _ui = new UI();
         ArrayList TokenList;
         Token CurrentToken;
         int CurTokenPos;
@@ -35,9 +34,9 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             FetchNextToken();
             
             Program P = parseProgram();
-            _ui.Info("Finished Parsing.");
-            _ui.Strong("Program = ");
-            _ui.Dump(P);
+            UI.Info("Finished Parsing.");
+            UI.Strong("Program = ");
+            UI.Dump(P);
         }
         
         // =============================================================================================================
@@ -60,46 +59,46 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 switch (Type)
                 {
                     case 1:
-                        _ui.Error("Syntax Error expected identifier");
+                        UI.Error("Syntax Error expected identifier");
                         break;
                     case 2:
-                        _ui.Error("Syntax Error expected operator");
+                        UI.Error("Syntax Error expected operator");
                         break;
                     case 3:
-                        _ui.Error("Syntax Error expected '('");
+                        UI.Error("Syntax Error expected '('");
                         break;
                     case 4:
-                        _ui.Error("Syntax Error expected ')'");
+                        UI.Error("Syntax Error expected ')'");
                         break;
                     case 5:
-                        _ui.Error("Syntax Error expected literal");
+                        UI.Error("Syntax Error expected literal");
                         break;
                     case 6:
-                        _ui.Error("Syntax Error expected 'if'");
+                        UI.Error("Syntax Error expected 'if'");
                         break;
                     case 7:
-                        _ui.Error("Syntax Error expected 'then' after if");
+                        UI.Error("Syntax Error expected 'then' after if");
                         break;
                     case 8:
-                        _ui.Error("Syntax Error expected 'else' after then");
+                        UI.Error("Syntax Error expected 'else' after then");
                         break;
                     case 9:
-                        _ui.Error("Syntax Error expected 'Let'");
+                        UI.Error("Syntax Error expected 'Let'");
                         break;
                     case 10:
-                        _ui.Error("Syntax Error expected 'in' after let");
+                        UI.Error("Syntax Error expected 'in' after let");
                         break;
                     case 11:
-                        _ui.Error("Syntax Error missing end");
+                        UI.Error("Syntax Error missing end");
                         break;
                     case 12:
-                        _ui.Error("Syntax Error missing : after variable declaration");
+                        UI.Error("Syntax Error missing : after variable declaration");
                         break;
                     case 13:
-                        _ui.Error("Syntax Error missing var before declaring variable");
+                        UI.Error("Syntax Error missing var before declaring variable");
                         break;
                     default:
-                        _ui.Error("Syntax Error in accept");
+                        UI.Error("Syntax Error in accept");
                         break;
                 }
         }
@@ -266,6 +265,8 @@ namespace Compiler_Project_Tanks___Carl_Meyer
        // V-name 		::=	a | b | c | d | e
        Identifier parseIdentifier()
         {
+            if (CurrentToken == null)
+                return null;
             Identifier I = new Identifier(CurrentToken.getSpelling());
             accept(Identifier);
             return I;
@@ -273,6 +274,8 @@ namespace Compiler_Project_Tanks___Carl_Meyer
        // Operator 		::=	+ | - | * | / | < | > | =
         Operate parseOperator()
         {
+            if (CurrentToken == null)
+                return null;
             Operate O = new Operate(CurrentToken.getSpelling());
             accept(Operator);
             return O;
@@ -312,6 +315,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             // parse the variable type Denoter
             TypeDenoter kind =  parseTypeDenoter();
             singleDeclaration = new SingleDeclaration(I, kind);
+            singleDeclaration.Type = new Type(kind);
             return singleDeclaration;
         }
 
