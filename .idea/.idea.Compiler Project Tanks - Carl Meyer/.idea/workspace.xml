@@ -9,8 +9,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06945c39-7a46-445d-84a6-2326acea7ff9" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdEntry.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdentificationTable.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" afterDir="false" />
@@ -26,9 +27,11 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" />
+      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdentificationTable.cs" />
+      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdEntry.cs" />
       <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" />
       <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Visitor.cs" />
+      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1keLbGrOl3w6nzXf3NiQH5LF8gf" />
@@ -85,7 +88,7 @@
       <workItem from="1609791135133" duration="3907000" />
       <workItem from="1609909775730" duration="11185000" />
       <workItem from="1610401343719" duration="553000" />
-      <workItem from="1610402697121" duration="1965000" />
+      <workItem from="1610402697121" duration="9155000" />
     </task>
     <servers />
   </component>

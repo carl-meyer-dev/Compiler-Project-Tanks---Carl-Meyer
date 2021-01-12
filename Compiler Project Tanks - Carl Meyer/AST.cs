@@ -232,6 +232,8 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
     public class Declaration: AST
     {
+        public bool duplicated;
+
         public override object visit(Visitor v, object arg)
         {
             return v.visitDeclaration(this, arg);
@@ -247,6 +249,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             _declaration1 = d1;
             _declaration2 = d2;
+            duplicated = false;
         }
 
         public override object visit(Visitor v, object arg)
@@ -270,6 +273,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             Identifier = i;
             TypeDenoter = t;
             inferType(t.Spelling);
+            duplicated = false;
         }
 
         private static Type inferType(String type)
@@ -332,7 +336,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
     // Operator 		::=	+ | - | * | / | < | > | =
     public class Operate : Terminal
     {
-        public OperatorDeclaration OperatorDeclaration;
+        public Declaration OperatorDeclaration;
 
         public Operate(String spelling) : base(spelling)
         {
@@ -344,8 +348,8 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         }
     }
 
-    public class OperatorDeclaration
-    // TODO:
+    public class OperatorDeclaration : Declaration
+        // TODO:
     {
     }
 
@@ -421,7 +425,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
 
         public Type(TypeDenoter T)
         {
-            this.kind = InferType(T.Spelling);
+            kind = InferType(T.Spelling).kind;
         }
 
         public bool _Equals(Object other)
@@ -435,20 +439,20 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         public static Type _double = new Type(Double);
         public static Type _error = new Type(Error);
 
-        private static int InferType(String type)
+        public static Type InferType(String type)
         {
             switch (type)
             {
                 case "int":
-                    return Integer;
+                    return _int;
                 case "double":
-                    return Double;
+                    return _double;
                 case "boolean":
-                    return Boolean;
+                    return _bool;
                 default:
                     Console.WriteLine("Syntax Error: Expect type to be one of int | double | boolean but received {0}",
                         type);
-                    return Error;
+                    return _error;
             }
         }
     }
