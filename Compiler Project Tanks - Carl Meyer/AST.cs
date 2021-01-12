@@ -126,7 +126,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                     if ((P1.Type.kind == 1 && P2.Type.kind == 2) || (P1.Type.kind == 2 && P2.Type.kind == 1))
                     {
                         UI.Error("Type Error: can not  check an int and a double against each other");
-                        type = new Type(0);
+                        type = new Type(-1);
                         break;
                     }
 
@@ -164,14 +164,14 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                     if (P1.Type.kind == 3 || P2.Type.kind == 3)
                     {
                         UI.Error("Contextual Error: Expected an int or a double but found a bool.");
-                        type = new Type(0);
+                        type = new Type(-1);
                     }
 
                     // if either primary's type is 0 it means there was a syntax error
                     if (P1.Type.kind == 3 || P2.Type.kind == 3)
                     {
                         UI.Error("Contextual Error: Expected an int or a double but found a syntax error.");
-                        type = new Type(0);
+                        type = new Type(-1);
                     }
 
                     break;
@@ -401,7 +401,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         const int Double = 2;
         const int Boolean = 3;
 
-        const int SyntaxError = 0;
+        const int Error = -1; // indicates a TypeError
         /*
          * Type Rules:
          * int + - * / int => int
@@ -424,6 +424,17 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             this.kind = InferType(T.Spelling);
         }
 
+        public bool _Equals(Object other)
+        {
+            Type otherType = (Type) other;
+            return (kind == otherType.kind || this.kind == Error || otherType.kind == Error);
+        }
+        // using underscores to not confuse with actual C# bool, int, double data types
+        public static Type _bool = new Type(Boolean);
+        public static Type _int = new Type(Integer);
+        public static Type _double = new Type(Double);
+        public static Type _error = new Type(Error);
+
         private static int InferType(String type)
         {
             switch (type)
@@ -437,7 +448,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 default:
                     Console.WriteLine("Syntax Error: Expect type to be one of int | double | boolean but received {0}",
                         type);
-                    return SyntaxError;
+                    return Error;
             }
         }
     }
