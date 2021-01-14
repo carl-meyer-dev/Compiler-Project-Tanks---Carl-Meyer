@@ -1,7 +1,12 @@
 ﻿namespace Compiler_Project_Tanks___Carl_Meyer
 {
+    /**
+     * This class is responsible for running contextual analysis against the AST that was produced by Parsing
+     * the source code
+     */
     public class Analyser : Visitor
     {
+        // identification table to keep track of scope and variable declarations
         private IdentificationTable idTable;
 
         public Analyser()
@@ -9,10 +14,19 @@
             idTable = new IdentificationTable();
         }
 
+        /**
+         * The check method simply calls the first visit method on the program object. Since it's an AST each
+         * visit method will attempt to run contextual analysis operations and also continue to visit each node of the
+         * AST. As it traverses the AST it will use the identification table to check for scope and make sure that
+         * variable declarations are handled correctly. 
+         */
         public void Check(Program program)
         {
+            // we start by calling the visit method of the program class
             program.visit(this, null);
         }
+        
+        // below follows the visit methods that are implemented from the Visitor Interface. 
 
         public object visitProgram(Program prog, object arg)
         {

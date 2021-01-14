@@ -10,6 +10,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         ArrayList TokenList;
         Token CurrentToken;
         int CurTokenPos;
+        public Program _program;
 
         const int Identifier = 1;
         const int Operator = 2;
@@ -33,10 +34,10 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             CurTokenPos = -1;
             FetchNextToken();
             
-            Program P = parseProgram();
+            _program = parseProgram();
             UI.Info("Finished Parsing.");
             UI.Strong("Program = ");
-            UI.Dump(P);
+            UI.Dump(_program);
         }
         
         // =============================================================================================================

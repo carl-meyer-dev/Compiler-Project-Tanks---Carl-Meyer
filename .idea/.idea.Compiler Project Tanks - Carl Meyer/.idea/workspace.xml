@@ -9,13 +9,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="06945c39-7a46-445d-84a6-2326acea7ff9" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdEntry.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/IdentificationTable.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Compiler Project Tanks - Carl Meyer/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Visitor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Visitor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +29,8 @@
       <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/AST.cs" />
       <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Visitor.cs" />
       <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Analyser.cs" />
+      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs" />
+      <option value="$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/CLI.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1keLbGrOl3w6nzXf3NiQH5LF8gf" />
@@ -89,6 +88,7 @@
       <workItem from="1609909775730" duration="11185000" />
       <workItem from="1610401343719" duration="553000" />
       <workItem from="1610402697121" duration="9155000" />
+      <workItem from="1610597825340" duration="1301000" />
     </task>
     <servers />
   </component>
@@ -117,7 +117,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="DotNet Breakpoints">
           <url>file://$PROJECT_DIR$/Compiler Project Tanks - Carl Meyer/Parser.cs</url>
-          <line>116</line>
+          <line>117</line>
           <properties documentPath="C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\Parser.cs" initialLine="114" />
           <option name="timeStamp" value="1" />
         </line-breakpoint>

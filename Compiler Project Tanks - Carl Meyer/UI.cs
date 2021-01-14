@@ -6,6 +6,10 @@ using Formatting = System.Xml.Formatting;
 
 namespace Compiler_Project_Tanks___Carl_Meyer
 {
+    /**
+     * This class is responsible for printing messages to the console
+     * (this is to make it easy to print warnings, errors and info messages)
+     */
     public static class UI
     {
         public static void Info(string message)

@@ -6,11 +6,16 @@ using System.Xml;
 
 namespace Compiler_Project_Tanks___Carl_Meyer
 {
+    /**
+     * This class is responsible for the Command Line Interface and calling the appropriate methods
+     * for this Project.
+     */
     public class Menu
     {
 
         private string _sourceCode = "";
         private Scanner _scanner;
+        private Program _program;
         public void StartMenu()
         {
             Console.Clear();
@@ -60,16 +65,14 @@ namespace Compiler_Project_Tanks___Carl_Meyer
                 case "parse":
                     Parse();
                     break;
-                case "ast":
-                    break;
-                case "syntax":
-                    break;
                 case "context":
+                    ContextualAnalysis();
                     break;
                 case "help":
                     ShowHelp();
                     break;
                 case "quit":
+                    Quit();
                     return;
                 // case "run": - dont have to run the code
                 //     break;
@@ -137,7 +140,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
         {
             try
             {
-                StreamWriter sw = new StreamWriter(@"C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\SourceCode.txt");
+                StreamWriter sw = new StreamWriter(@"C:\Users\NMU\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\SourceCode.txt");
                 
                 UI.Info("\nPlease enter source code:\n");
                 
@@ -161,7 +164,7 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             try
             {
                 
-                StreamReader sr = new StreamReader(@"C:\Users\Carl\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\SourceCode.txt");
+                StreamReader sr = new StreamReader(@"C:\Users\NMU\Google Drive\NMU BSc Honours\Compiler Theory\Project TANKS\Compiler Project Tanks - Carl Meyer\Compiler Project Tanks - Carl Meyer\SourceCode.txt");
                 
                 string line = sr.ReadLine();
                 
@@ -231,7 +234,20 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             }
             UI.Info("\nParsing Source Code...\n");
             Parser parser = new Parser(_sourceCode);
+            _program = parser._program;
         }
+        
+        private void ContextualAnalysis()
+        {
+            Analyser analyser = new Analyser();
+            analyser.Check(_program);
+        }
+        
+        private void Quit()
+        {
+            Environment.Exit(0);
+        }
+
 
         private void ShowHelp()
         {
@@ -243,8 +259,6 @@ namespace Compiler_Project_Tanks___Carl_Meyer
             Console.WriteLine("scan - scans the Source Code using the scanner. (keeps the scanner in memory for further usage)");
             Console.WriteLine("display tokens - Display the tokens that have been identified by the scanner");
             Console.WriteLine("parse - parses the Source Code and then displays the tokens to the console.");
-            Console.WriteLine("ast - builds an AST from the Source Code and then displays the AST to the console or any errors if they occur.");
-            Console.WriteLine("syntax - perform a syntax analysis of the AST built from the Source Code.");
             Console.WriteLine("context - perform a contextual analysis of the AST built from the Source Code.");
             // Console.WriteLine("run - the Source Code"); - dont have to run the code
             Console.WriteLine("help - displays the help message.");
